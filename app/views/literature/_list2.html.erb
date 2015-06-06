@@ -1,0 +1,21 @@
+<div class="row">
+  <%= form_tag("/gost", method: "get") do %>
+  <div class="col-md-6">
+    <%= label_tag(:doc_name, "Заглавие нормативно-технического документа") %>
+    <%= text_field_tag(:doc_name) %>
+    <%= label_tag(:title_info, "Сведения, относящиеся к заглавию") %> 
+    <%= text_field_tag(:title_info) %>
+    <%= label_tag(:last_doc, "Обозначения ранее действующего документа") %> 
+    <%= text_field_tag(:last_doc) %>
+  </div>
+  <div class="col-md-6">
+    <%= label_tag(:year, "Год издания") %>
+    <%= text_field_tag(:year, nil, placeholder: 'гггг') %>
+    <%= label_tag(:date_adm, "Дата введения") %> 
+    <%= text_field_tag(:date_adm) %>
+    <%= label_tag(:volume, "Объем") %> 
+    <%= number_field_tag(:volume,0,min:0,step:1) %>
+    <%= submit_tag("Добавить НТД", class: "btn btn-large btn-primary") %>
+  </div>
+  <% end %>
+</div>

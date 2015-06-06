@@ -1,0 +1,13 @@
+<!--Партиал для отдельного элемента фид ленты-->
+<li id="<%= feed_item.id %>">
+  <!--Ссылка на юзверя который сделал запись, в частности на свой профиль, немного не логично, но всем пофиг-->
+  <span class="user">
+    <%= link_to feed_item.user.name, feed_item.user %>
+  </span>
+  <br>
+  <span><%= feed_item.literature %></span>
+  <br>
+  <span class="timestamp">
+    Сохранено: <%= feed_item.created_at %>
+  </span>
+</li>

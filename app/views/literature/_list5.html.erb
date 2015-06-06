@@ -1,0 +1,31 @@
+<div class="row">
+  <%= form_tag("/gost", method: "get") do %>
+  <div class="col-md-6">
+   <!--Автор. Заглавие: сведения, относящиеся к заглавию (см. на титуле): шифр номенклатуры специальностей научных работников: дата защиты: дата утверждения / сведения об ответственности (автор); последующие сведения об ответственности (коллектив). – Место написания, Дата написания. – Объем.-->
+    <%= label_tag(:autor, "Автор") %>
+    <%= text_field_tag(:autor,nil) %>
+    <%= label_tag(:title, "Заглавие") %> 
+    <%= text_field_tag(:title) %>
+    <%= label_tag(:title_info, "Cведения, относящиеся к заглавию") %> 
+    <%= text_field_tag(:title_info) %>
+    <%= label_tag(:special_number, "Шифр номенклатуры специальностей научных работников") %>
+    <%= text_field_tag(:special_number) %>
+    <%= label_tag(:group, "Последующие сведения об ответственности (коллектив)") %>
+    <%= text_field_tag(:group) %>
+  </div>
+  <div class="col-md-6">
+    <%= label_tag(:writing_place, "Место написания") %>
+    <%= text_field_tag(:writing_place) %>
+    <%= label_tag(:volume, "Объем") %> 
+    <%= number_field_tag(:volume,0,min:1,step:1) %>
+    <%= label_tag(:date_protection, "Дата защиты") %> 
+    <%= date_field_tag(:date_protection) %>
+    <%= label_tag(:date_approv, "Дата утверждения") %> 
+    <%= date_field_tag(:date_approv) %>
+    <%= label_tag(:date_writing, "Дата написания") %> 
+    <%= date_field_tag(:date_writing) %>
+    
+    <%= submit_tag("Добавить диссертацию", class: "btn btn-large btn-primary") %>
+  </div>
+  <% end %>
+</div>

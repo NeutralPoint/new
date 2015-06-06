@@ -1,0 +1,42 @@
+<div class="navbar navbar-inverse">
+  <div class="container">
+     <div class="navbar-haeder">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+            <span class="sr-only">"Открыть навигацию"</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+         <!--<a class="navbar-brand" href="#" style="float:left">Лого+Название</a>-->
+         <center><a href= <%= root_url %> ><img src=<%=asset_path "Logo.jpg" %> ></a></center>
+     </div>
+     <div class="collapse navbar-collapse" id="responsive-menu">
+        <ul class="nav navbar-nav">
+             <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Меню <b class="caret"></b></a>
+                 <ul class="dropdown-menu">
+                     <li><%=link_to "Составление Списка Литературы" , '/gost'%></li>
+                 </ul>
+             </li>
+        </ul>
+        <% if signed_in? %>
+         <ul class="nav navbar-nav">
+               <li class="dropdown">
+                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Аккаунт <b class="caret"></b></a>
+                   <ul class="dropdown-menu">
+                       <li><%= link_to "Профиль", current_user %></li>
+                       <li><%= link_to "Настройки", edit_user_path(current_user) %></li>
+                        <li><%= link_to "Просмотреть все списки литературы",'/all' %></li>
+                       <li class="divider"></li>
+                       <li><%= link_to "Выйти", signout_path, method: "delete" %></li>
+                   </ul>
+               </li>
+          </ul>
+          <% else %>
+          <!--Не вошел предлагаем войти-->
+          <a class="navbar-brand" href= <%=signin_path %>>Войти</a>
+          <% end %>
+        <a class="navbar-brand" href= <%='/autors' %> style="float:right">Создатели</a>
+     </div>
+  </div>
+</div>         

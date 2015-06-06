@@ -1,0 +1,16 @@
+<div class="row">
+  <%= form_tag("/gost", method: "get") do %>
+  <div class="col-md-6">
+   <!--Сведения о статье // Сведения об источнике статьи. – Сведение о местоположении статьи в документе.-->
+    <%= label_tag(:title_info, "Сведения о статье") %>
+    <%= text_field_tag(:title_info,nil) %>
+    <%= label_tag(:title_source, "Сведения об источнике статьи") %> 
+    <%= text_field_tag(:title_source) %>
+  </div>
+  <div class="col-md-6">
+    <%= label_tag(:title_place, "Местоположении статьи в документе") %>
+    <%= text_field_tag(:title_place) %>
+    <%= submit_tag("Добавить часть документа", class: "btn btn-large btn-primary") %>
+  </div>
+  <% end %>
+</div>

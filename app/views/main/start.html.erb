@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head> 
+    <title>[5|Lines]</title>
+  </head>
+<body>
+<div id="carousel" class="carousel slide">
+   <!--Индикаторы-->
+    <ol class="carousel-indicators">
+        <li class="active" data-target="carousel" data-slide="0"></li>
+        <li data-target="carousel" data-slide="1"></li>
+        <li data-target="carousel" data-slide="2"></li>
+    </ol>
+    <!--Слайды-->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src= <%=asset_path "work.png" %> alt="">
+            <div class="carousel-caption">
+                <h3>Самое просто оформление ссылок, которые вы видели!</h3>
+            </div>
+        </div>
+        <div class="item">
+            <img src= <%=asset_path "work1.png" %> alt="">
+            <div class="carousel-caption">
+                <h3>Необохдимо всего лишь заполнить поля и щелкнуть кнопку, программа сделают все остальное за вас!!!</h3>
+              </div>
+        </div>
+        <div class="item">
+            <center><img src= <%=asset_path "money.png" %> alt=""></center>
+            <div class="carousel-caption">
+                <h1>Тут все абсолютно бесплатно!<br><br><br><br><br><br><br><br></h1>
+            </div>
+        </div>
+          <div class="item">
+              <img src= <%=asset_path "we.png" %> alt="">
+            <div class="carousel-caption">
+                <h2> С вами работают удивительно креативные люди!!!</h2>
+            </div>
+        </div>
+    </div>
+    <!--переключение слайдов-->
+    <a href="#carousel" class="left carousel-control" data-slide="prev">
+        <spavn class="gliphycon gliphycon-sheld-left"></spavn>
+    </a>
+    <a href="#carousel" class="right carousel-control" data-slide="next">
+        <spavn class="gliphycon gliphycon-sheld-right"></spavn>
+    </a>
+   
+</div>
+
+  </body>
+</html>

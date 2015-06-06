@@ -1,0 +1,30 @@
+<div class="row">
+  <%= form_tag("/gost", method: "get") do %>
+  <div class="col-md-6">
+   <!--Автор. Заглавие: сведения, относящиеся к заглавию (см. на титуле) / сведения об ответственности (авторы); последующие сведения об ответственности (редакторы, переводчики, коллективы). – Сведения об издании (информация о переиздании, номер издания). – Место издания: Издательство, Год издания. – Объем. – (Серия).-->
+    <%= label_tag(:autors, "Автор(ы)") %>
+    <%= text_field_tag(:autors,nil,placeholder:'Указывать через запятую') %>
+    <%= label_tag(:title, "Заглавие") %> 
+    <%= text_field_tag(:title) %>
+    <%= label_tag(:title_info, "Cведения, относящиеся к заглавию") %> 
+    <%= text_field_tag(:title_info) %>
+    <%= label_tag(:redactors, "Последующие сведения об ответственности") %>
+    <%= text_field_tag(:redactors) %>
+    <%= label_tag(:edition_info, "Сведения об издании") %>
+    <%= text_field_tag(:edition_info) %>
+  </div>
+  <div class="col-md-6">
+    <%= label_tag(:edition_place, "Место издания") %>
+    <%= text_field_tag(:edition_place) %>
+    <%= label_tag(:edition, "Издательство") %> 
+    <%= text_field_tag(:edition) %>
+    <%= label_tag(:date_edition, "Год издания") %> 
+    <%= text_field_tag(:date_edition, nil, placeholder: 'гггг') %>
+    <%= label_tag(:volume, "Объем") %>
+    <%= text_field_tag(:volume) %>
+    <%= label_tag(:series, "Серия") %>
+    <%= text_field_tag(:series) %>
+    <%= submit_tag("Добавить книгу", class: "btn btn-large btn-primary") %>
+  </div>
+  <% end %>
+</div>

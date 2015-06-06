@@ -1,0 +1,30 @@
+<div class="row">
+  <%= form_tag("/gost", method: "get") do %>
+  <div class="col-md-6">
+   <!--Автор. Заглавие издания: сведения, относящиеся к заглавию (см. на титуле) / Сведения об ответственности (авторы); последующие сведения об отвественности (редакторы, переводчики, коллективы). – Город издания: Издательство, Год начала издания – год окончания издания. – Количество томов. – (Серия).-->
+    <%= label_tag(:autors, "Автор(ы)") %>
+    <%= text_field_tag(:autors,nil,placeholder:'Указывать через запятую') %>
+    <%= label_tag(:title, "Заглавие") %> 
+    <%= text_field_tag(:title) %>
+    <%= label_tag(:title_info, "Cведения, относящиеся к заглавию") %> 
+    <%= text_field_tag(:title_info) %>
+    <%= label_tag(:redactors, "Последующие сведения об ответственности") %>
+    <%= text_field_tag(:redactors) %>
+    <%= label_tag(:tom_count, "Количество томов") %>
+    <%= number_field_tag(:tom_count,1,in:1..100,step:1) %>
+  </div>
+  <div class="col-md-6">
+    <%= label_tag(:edition_place, "Место издания") %>
+    <%= text_field_tag(:edition_place) %>
+    <%= label_tag(:edition, "Издательство") %> 
+    <%= text_field_tag(:edition) %>
+    <%= label_tag(:date_edition_start, "Год начала издания") %> 
+    <%= text_field_tag(:date_edition_start, nil, placeholder: 'гггг') %>
+    <%= label_tag(:date_edition_end, "Год конца здания") %> 
+    <%= text_field_tag(:date_edition_end, nil, placeholder: 'гггг') %>
+    <%= label_tag(:series, "Серия") %>
+    <%= text_field_tag(:series) %>
+    <%= submit_tag("Добавить тома", class: "btn btn-large btn-primary") %>
+  </div>
+  <% end %>
+</div>

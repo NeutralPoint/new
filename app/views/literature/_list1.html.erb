@@ -1,0 +1,26 @@
+<div class="row">
+  <%= form_tag("/gost", method: "get") do %>
+  <div class="col-md-6">
+   
+    <%= label_tag(:doc_name, "Заглавие официального документа") %>
+    <%= text_field_tag(:doc_name) %>
+    <%= label_tag(:title_info, "Сведения, относящиеся к заглавию") %> 
+    <%= text_field_tag(:title_info) %>
+    <%= label_tag(:date_adm, "Дата принятия документа") %> 
+    <%= date_field_tag(:date_adm) %>
+    <%= label_tag(:name, "Название издания") %>
+    <%= text_field_tag(:name) %>
+  </div>
+  <div class="col-md-6">
+    <%= label_tag(:year, "Год  издания") %>
+    <%= text_field_tag(:year, nil, placeholder: 'гггг') %>
+    <%= label_tag(:number, "Номер (для журнала)") %> 
+    <%= text_field_tag(:number) %>
+    <%= label_tag(:date_newspaper, "Дата и месяц выпуска для газеты") %> 
+    <%= date_field_tag(:date_newspaper) %>
+    <%= label_tag(:pages, "Первая и последняя страницы") %>
+    <%= text_field_tag(:pages, nil, placeholder: 'Первая-Последняя') %>
+    <%= submit_tag("Добавить НПД", class: "btn btn-large btn-primary") %>
+  </div>
+  <% end %>
+</div>

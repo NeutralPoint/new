@@ -1,0 +1,7 @@
+<!--Партиал фид ленты-->
+<% if @all_lists.any? %>
+<ol class="list_elements">
+    <%= render partial: 'shared/feed_item', collection: @all_lists %>
+</ol>
+    <%= will_paginate @all_lists %>
+<% end %>

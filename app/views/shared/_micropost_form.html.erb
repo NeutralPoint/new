@@ -1,0 +1,39 @@
+<!--Партиал для формы заполнения записи-->
+<%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+<!--Куча полей-->
+  <div class="field">
+    <%= f.text_area :short_text_sys, placeholder: "Short system text" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :name_sys, placeholder: "Name of system" %>
+  </div>
+  <small>Type of system</small>
+  <div class="field">
+    <%= f.select(:type_sys, [['Physical',1],['Abstract',2],['Open',3],['Closed',4],['Formal',5],['Informal',6],['Special',7]]) %>
+  </div>
+  <div class="field">
+    <%= f.text_area :tags_sys, placeholder: "#your_tag,#another_tag" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :long_text_sys, placeholder: "Description of system" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :to_do_list_sys, placeholder: "To do List" %>
+  </div>
+  <small>Couraters</small>
+  <div class="field">
+    <%= f.collection_select(:member_list_sys, User.all, :name, :name) %>
+  </div>
+  <div class="field">
+    <%= f.text_area :git_link, placeholder: "git link to system's files" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :field_uses_sys, placeholder: "Uses of system" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :time_for_work_sys, placeholder: "Time for work" %>
+  </div>
+
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

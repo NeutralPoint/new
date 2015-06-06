@@ -1,0 +1,23 @@
+<div class="row">
+  <%= form_tag("/gost", method: "get") do %>
+  <div class="col-md-6">
+   <!--Автор. Заглавие статьи: сведения, относящиеся к заглавию / сведения об ответственности (авторы статьи) // Название газеты. – Год выпуска. – Число и месяц выпуска. – Местоположение статьи (страницы).-->
+    <%= label_tag(:autor, "Автор(ы)") %>
+    <%= text_field_tag(:autor,nil,placeholder:"Авторов вводить через запятую") %>
+    <%= label_tag(:title, "Заглавие статьи") %> 
+    <%= text_field_tag(:title) %>
+    <%= label_tag(:title_info, "Сведения, относящиеся к заглавию") %> 
+    <%= text_field_tag(:title_info) %>
+    
+  </div>
+  <div class="col-md-6">
+    <%= label_tag(:number, "Дата выпуска") %> 
+    <%= date_field_tag(:number) %>
+    <%= label_tag(:title_news, "Название газеты") %> 
+    <%= text_field_tag(:title_news) %>
+    <%= label_tag(:title_place, "Местоположение статьи") %> 
+    <%= number_field_tag(:title_place,min:1,step:1) %>
+    <%= submit_tag("Добавить статью из газеты", class: "btn btn-large btn-primary") %>
+  </div>
+  <% end %>
+</div>

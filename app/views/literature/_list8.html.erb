@@ -1,0 +1,26 @@
+<div class="row">
+  <%= form_tag("/gost", method: "get") do %>
+  <div class="col-md-6">
+   <!--Автор. Заглавие [Электронный ресурс]: сведения, относящиеся к заглавию / сведения об ответственности (авторы); последующие сведения об ответственности (редакторы, переводчики, коллективы). – Обозначение вида ресурса («электрон. текст. дан.»). – Место издания: Издательство, Дата издания. – Режим доступа: URL.-->
+    <%= label_tag(:autor, "Автор") %>
+    <%= text_field_tag(:autor,nil) %>
+    <%= label_tag(:title, "Заглавие") %> 
+    <%= text_field_tag(:title) %>
+    <%= label_tag(:title_info, "Cведения, относящиеся к заглавию") %> 
+    <%= text_field_tag(:title_info) %>
+    <%= label_tag(:group, "Сведения об ответственности (редакторы и тд)") %>
+    <%= text_field_tag(:group) %>
+  </div>
+  <div class="col-md-6">
+    <%= label_tag(:edition_place, "Место издания") %>
+    <%= text_field_tag(:edition_place) %>
+    <%= label_tag(:edition, "Издательство") %> 
+    <%= text_field_tag(:edition) %>
+    <%= label_tag(:year_editon, "Год издания") %> 
+    <%= number_field_tag(:year_editon,nil,min:1000,step:1) %>
+    <%= label_tag(:url, "Режим доступа") %> 
+    <%= number_field_tag(:url) %>
+    <%= submit_tag("Добавить сайт", class: "btn btn-large btn-primary") %>
+  </div>
+  <% end %>
+</div>

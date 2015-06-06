@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Госты</title>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-8">
+        <%= render 'boyan' %>
+      </div>
+      <div class="col-md-4">
+        <h4>Список литературы:</h4>
+          <% if signed_in? %>
+            <%= form_for(@literature) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <%= f.text_area(:literature, size: "48x12")%>
+            <%= f.submit "Добавить", class: "btn btn-large btn-primary" %> <% end %>
+          <% else %>
+            <%= text_area_tag(:literature,@lit_list, size: "48x12")%>
+          <% end %>
+        <%= form_tag("/gost", method: "delete") do %>
+          <%= submit_tag("Очистить", class: "btn btn-large btn-primary") %>
+          <% end %>
+      </div>
+    </div>
+  </body>
+</html>

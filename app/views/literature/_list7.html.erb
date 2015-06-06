@@ -1,0 +1,33 @@
+<div class="row">
+  <%= form_tag("/gost", method: "get") do %>
+  <div class="col-md-6">
+   <!--Автор. Заглавие [Электронный ресурс]: сведения, относящиеся к заглавию / сведения об отвественности (авторы); последующие сведения об отвественности (редакторы, переводчики, коллективы). – Обозначение вида ресурса («электрон. дан.» и/или «электрон. прогр.»). – Место издания: Издательство, Год издания. – Обозначение материала и количество физических единиц. – (Серия).-->
+    <%= label_tag(:autor, "Автор") %>
+    <%= text_field_tag(:autor,nil) %>
+    <%= label_tag(:title, "Заглавие") %> 
+    <%= text_field_tag(:title) %>
+    <%= label_tag(:title_info, "Cведения, относящиеся к заглавию") %> 
+    <%= text_field_tag(:title_info) %>
+    <%= label_tag(:type_resource, "Вид ресурса") %>
+    <%= select_tag(:type_resource, options_for_select([['Электронные данные', 1], ['Электронная программа', 2]])) %>
+    <%= label_tag(:group, "Сведения об ответственности (редакторы и тд)") %>
+    <%= text_field_tag(:group) %>
+    <%= label_tag(:series, "Серия") %> 
+    <%= number_field_tag(:series) %>
+  </div>
+  <div class="col-md-6">
+    <%= label_tag(:edition_place, "Место издания") %>
+    <%= text_field_tag(:edition_place) %>
+    <%= label_tag(:edition, "Издательство") %> 
+    <%= text_field_tag(:edition) %>
+    <%= label_tag(:year_editon, "Год издания") %> 
+    <%= number_field_tag(:year_editon,nil,min:1000,step:1) %>
+    <%= label_tag(:type_disc, "Тип дисков") %>
+    <%= select_tag(:type_disc, options_for_select([['CD', 1], ['DVD', 2]])) %>
+    <%= label_tag(:volume, "Количество дисков") %> 
+    <%= number_field_tag(:volume,0,min:1,step:1) %>
+
+    <%= submit_tag("Добавить Эл. носитель", class: "btn btn-large btn-primary") %>
+  </div>
+  <% end %>
+</div>
